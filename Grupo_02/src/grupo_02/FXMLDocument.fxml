@@ -7,11 +7,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="grupo_02.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grupo_02.FXMLDocumentController">
     <children>
       <Pane prefHeight="200.0" prefWidth="314.0">
          <children>
             <JFXButton layoutX="231.0" layoutY="165.0" ripplerFill="BLACK" text="Clique aqui!" textAlignment="JUSTIFY" />
+            <Button layoutX="85.0" layoutY="62.0" mnemonicParsing="false" text="Button" />
          </children>
       </Pane>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
