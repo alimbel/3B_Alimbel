@@ -1,42 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package grupo_02;
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+    <!-- unidade de persistencia com o nome aula -->
+    <persistence-unit name="aula">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+        <!-- Aqui são listadas todas as entidades -->
+        <class>br.edu.ifro.Aluno</class>
 
-
-
-public class FXMLDocumentController implements Initializable {
-    
-    @FXML
-    private TextField txtNumero1, txtNumero2, txtResultado;
-    
-    @FXML
-    private Button btnSoma;
-                 
-    
-    @FXML
-    private void soma(ActionEvent event) {
-       Double num1 = Double.parseDouble(txtNumero1.getText());
-       Double num2 = Double.parseDouble(txtNumero2.getText());
-       Double resultado = num1 + num2;
-       
-       txtResultado.setText(resultado.toString());
-
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
-}
+        <properties>            
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <!-- Banco de dados host/database -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/aula" />
+            
+            <!-- Banco de dados user/password -->
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="root" />
+            
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
